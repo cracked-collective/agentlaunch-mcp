@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "ch.agentlaun/agentlaunch",
+  "name": "io.github.cracked-collective/agentlaunch",
   "title": "AgentLaunch",
   "description": "Plan and run paced startup, SaaS and AI directory launches from your agent, in your own Chrome.",
   "version": "1.0.0",
