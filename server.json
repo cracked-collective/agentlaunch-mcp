@@ -1,0 +1,43 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ch.agentlaun/agentlaunch",
+  "title": "AgentLaunch",
+  "description": "Plan and run paced startup, SaaS and AI directory launches from your agent, in your own Chrome.",
+  "version": "1.0.0",
+  "websiteUrl": "https://www.agentlaun.ch/docs#mcp",
+  "repository": {
+    "url": "https://github.com/cracked-collective/agentlaunch-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://www.agentlaun.ch/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.agentlaun.ch/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Your AgentLaunch API key, created on https://www.agentlaun.ch/connect (starts with rl_).",
+          "value": "Bearer {api_key}",
+          "isRequired": true,
+          "isSecret": true,
+          "variables": {
+            "api_key": {
+              "description": "AgentLaunch API key (rl_...)",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
