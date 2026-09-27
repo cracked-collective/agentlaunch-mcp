@@ -69,7 +69,7 @@ curl -X POST https://www.agentlaun.ch/mcp \
 The skill teaches your agent the launch workflow: when to ask you, how to pace, what never to do on your behalf.
 
 ```bash
-mkdir -p ~/.claude/skills/agentlaunch && curl -fsSL https://www.agentlaun.ch/skills/rocket-launch/SKILL.md -o ~/.claude/skills/agentlaunch/SKILL.md
+mkdir -p ~/.claude/skills/agentlaunch && curl -fsSL https://www.agentlaun.ch/skills/agentlaunch/SKILL.md -o ~/.claude/skills/agentlaunch/SKILL.md
 ```
 
 ## What your agent can do
