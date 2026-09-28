@@ -2,7 +2,7 @@
 
 Plan and run a paced directory launch for your startup, SaaS or AI tool from **Claude Code, Cursor, Codex or any MCP client**. Your agent picks the directories, writes copy for each one and queues the work. The AgentLaunch Chrome extension fills the real submission forms in **your own Chrome**, a few a day, and hands you anything that needs a person.
 
-- **397 checked directories** (startup, SaaS, AI, launch platforms, review sites, MCP registries), picked from 2,703 we reviewed
+- **300+ checked directories** (startup, SaaS, AI, launch platforms, review sites, MCP registries), picked from 2,703 we reviewed
 - **Your browser, your accounts.** Forms are filled in your Chrome profile, not on someone else's servers
 - **Paced on purpose.** 10 submissions a day by default, never more than 20 in 24 hours
 - **You stay in charge.** Passwords, CAPTCHAs, email codes, payments and final approval on major platforms always come back to you
