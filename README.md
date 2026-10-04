@@ -10,32 +10,32 @@ Plan and run a paced directory launch for your startup, SaaS or AI tool from **C
 
 ![AgentLaunch launch page with status, pace and a Needs you list](assets/launch-page.webp)
 
-> This repository holds the MCP server listing, client configuration and agent skill. The server is hosted at `https://www.agentlaun.ch/mcp`. Its source code ships with the [Self-Host License](#self-host-it-for-your-clients).
+> New customers run AgentLaunch on their own deployment. The hosted endpoint at `https://www.agentlaun.ch/mcp` is a legacy endpoint for one grandfathered customer and is not available for new purchases. This repository holds the MCP server listing, client configuration and agent skill; the source code ships with the [Self-Host License](#self-host-it-for-your-clients).
 
 ## Pricing
 
 AgentLaunch is a paid product. You need one of these before your agent can add a product:
 
-| | Hosted | Self-Host License |
-|---|---|---|
-| Price | **$39** per product, one-time | **$149** one-time |
-| Launches | One product | Unlimited, on your own servers |
-| Runs on | agentlaun.ch | Your own Railway account and AI key |
-| Includes | MCP server, Chrome extension, directory catalog, launch dashboard | Full source: web app, launch agent, MCP server, Chrome extension, catalog updates every 3 months |
+| | Self-Host License |
+|---|---|
+| Price | **$149** one-time |
+| Launches | Unlimited, on your own servers |
+| Runs on | Your own Railway account and AI key |
+| Includes | Full source: web app, launch agent, MCP server, Chrome extension, launch catalog and catalog updates every 3 months |
 
 [See pricing →](https://www.agentlaun.ch/pricing?utm_source=github&utm_medium=referral&utm_campaign=mcp-repo)
 
 ## Quick start
 
-1. **Get access.** Buy a launch or the Self-Host License at [agentlaun.ch](https://www.agentlaun.ch/?utm_source=github&utm_medium=referral&utm_campaign=mcp-repo).
-2. **Install the Chrome extension and create an API key** on the [Connect page](https://www.agentlaun.ch/connect?utm_source=github&utm_medium=referral&utm_campaign=mcp-repo). Keys start with `rl_` and are shown once. Store it in your client's secret settings.
-3. **Add the server to your client** (below).
+1. **Get access.** Buy the $149 Self-Host License at [agentlaun.ch](https://www.agentlaun.ch/?utm_source=github&utm_medium=referral&utm_campaign=mcp-repo), then deploy the private source on your own host using the [self-hosting guide](https://www.agentlaun.ch/docs/self-hosting?utm_source=github&utm_medium=referral&utm_campaign=mcp-repo).
+2. **Install the Chrome extension and create an API key** on your deployment's `https://<site>/connect` page. Keys start with `rl_` and are shown once. Store it in your client's secret settings.
+3. **Add your deployment's MCP endpoint** (`https://<site>/mcp`) to your client (below).
 4. **Ask your agent** to call `list_projects`, then plan the launch with you.
 
 ### Claude Code
 
 ```bash
-claude mcp add --transport http agentlaunch https://www.agentlaun.ch/mcp \
+claude mcp add --transport http agentlaunch https://<site>/mcp \
   --header "Authorization: Bearer rl_YOUR_KEY"
 ```
 
@@ -45,7 +45,7 @@ claude mcp add --transport http agentlaunch https://www.agentlaun.ch/mcp \
 {
   "mcpServers": {
     "agentlaunch": {
-      "url": "https://www.agentlaun.ch/mcp",
+      "url": "https://<site>/mcp",
       "headers": {
         "Authorization": "Bearer rl_YOUR_KEY"
       }
@@ -57,7 +57,7 @@ claude mcp add --transport http agentlaunch https://www.agentlaun.ch/mcp \
 ### Test the connection
 
 ```bash
-curl -X POST https://www.agentlaun.ch/mcp \
+curl -X POST https://<site>/mcp \
   -H 'Authorization: Bearer rl_YOUR_KEY' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
@@ -69,7 +69,7 @@ curl -X POST https://www.agentlaun.ch/mcp \
 The skill teaches your agent the launch workflow: when to ask you, how to pace, what never to do on your behalf.
 
 ```bash
-mkdir -p ~/.claude/skills/agentlaunch && curl -fsSL https://www.agentlaun.ch/skills/agentlaunch/SKILL.md -o ~/.claude/skills/agentlaunch/SKILL.md
+mkdir -p ~/.claude/skills/agentlaunch && curl -fsSL https://<site>/skills/agentlaunch/SKILL.md -o ~/.claude/skills/agentlaunch/SKILL.md
 ```
 
 ## What your agent can do
@@ -101,9 +101,9 @@ A typical session:
 
 ## Self-host it for your clients
 
-The **$149 Self-Host License** gives you the full AgentLaunch source code in a private GitHub repository: the web app, launch agent, **this MCP server**, the Chrome extension and the directory catalog, with catalog updates every 3 months. Run it on your own Railway account with your own AI key, and every account on your copy gets unlimited launches.
+The **$149 Self-Host License** gives you the full AgentLaunch source code in a private GitHub repository: the web app, launch agent, **this MCP server**, the Chrome extension and the directory catalog, with catalog updates every 3 months. Run it on your own Railway account with your own AI key, and every account on your copy gets unlimited launches. New customers connect their MCP client to their own deployment at `https://<site>/mcp`.
 
-It's built for developers and agencies who launch products repeatedly or run launches for clients. Read the [self-hosting guide](https://www.agentlaun.ch/docs/self-hosting?utm_source=github&utm_medium=referral&utm_campaign=mcp-repo) or [get the code](https://www.agentlaun.ch/pricing?utm_source=github&utm_medium=referral&utm_campaign=mcp-repo).
+It's built for developers and agencies who launch products repeatedly or run launches for clients. Read the [self-hosting guide](https://www.agentlaun.ch/docs/self-hosting?utm_source=github&utm_medium=referral&utm_campaign=mcp-repo) to deploy it.
 
 ## Security
 

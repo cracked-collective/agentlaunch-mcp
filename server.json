@@ -3,7 +3,7 @@
   "name": "io.github.cracked-collective/agentlaunch",
   "title": "AgentLaunch",
   "description": "Plan and run paced startup, SaaS and AI directory launches from your agent, in your own Chrome.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "websiteUrl": "https://www.agentlaun.ch/docs#mcp",
   "repository": {
     "url": "https://github.com/cracked-collective/agentlaunch-mcp",
@@ -21,7 +21,14 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://www.agentlaun.ch/mcp",
+      "url": "https://{site_host}/mcp",
+      "variables": {
+        "site_host": {
+          "description": "Hostname of your self-hosted AgentLaunch deployment, without https:// (for example, launch.example.com).",
+          "isRequired": true,
+          "placeholder": "launch.example.com"
+        }
+      },
       "headers": [
         {
           "name": "Authorization",
